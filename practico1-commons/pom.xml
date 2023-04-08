@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>tsee.g14.anthony</groupId>
+        <artifactId>practico1</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <groupId>tsee.g14.anthony</groupId>
+    <artifactId>practico1-commons</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>practico1 - commons</name>
+    <build>
+        <!-- Tell Maven that the resulting file should not have a file name containing the version - 
+		     a non versioned name is required e.g. when building a deployable artifact using the ShrinkWrap API -->
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>			
+			<!--Configure the EJB plugin: we create EJB 4.0. If not specified, an error will arise because the plugin expects an Ejb-jar by default. -->
+			<plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ejb-plugin</artifactId>
+                    <version>${version.ejb.plugin}</version>
+                    <configuration>
+                        <!-- Tell Maven we are using EJB 4.0 -->
+                        <ejbVersion>4.0</ejbVersion>
+                    </configuration>
+                </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>1.3</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+</project>
