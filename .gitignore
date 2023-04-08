@@ -8,8 +8,7 @@ nbactions.xml
 nb-configuration.xml
 
 # IntelliJ-specific files
-idea/
-.idea/
+.idea/*
 
 # Target folder
 target/
